@@ -10,8 +10,8 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             //Collections to work with
-            List<Artist> Artists = JsonToFile<Artist>.ReadJson();
-            List<Group> Groups = JsonToFile<Group>.ReadJson();
+            List<Artist> Artists = MusicStore.GetData().AllArtists;
+            List<Group> Groups = MusicStore.GetData().AllGroups;
 
             //========================================================
             //Solve all of the prompts below using various LINQ queries
@@ -28,7 +28,7 @@ namespace ConsoleApplication
             //(Optional) Display the Group Name of all groups that have members that are not from New York City
 
             //(Optional) Display the artist names of all members of the group 'Wu-Tang Clan'
-	    Console.WriteLine(Groups.Count);
+	        Console.WriteLine(Groups.Count);
         }
     }
 }
