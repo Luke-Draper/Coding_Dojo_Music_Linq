@@ -19,7 +19,9 @@ namespace ConsoleApplication
                 (joinedA, joinedG) => {
                     joinedA.Group = joinedG;
                     return joinedA;
-                }).ToList();
+                })
+                .Concat(Artists.Where(a => a.GroupId == 0))
+                .ToList();
 
             var GroupsWithArtists = Groups.Join(Artists,
                 (g => g.Id),
